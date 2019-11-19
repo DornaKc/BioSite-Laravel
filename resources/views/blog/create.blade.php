@@ -66,10 +66,6 @@
             <label for="body">Body:</label>
             <textarea id="body" name="body" placeholder="Write something.." style="height:200px"></textarea>
             </div>
-            <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
-            <label for="image">Image:</label>
-                <input type="file" id="image" name="image">
-            </div>
             <input type="submit" value="Post">
         </form>
         <a href="/blog"><input type="submit" value="View Blogs"></a>

@@ -49,19 +49,6 @@ class BlogController extends Controller
             'body' => $request->get('body'),
         ]);
 
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('uploads/blog/', $filename);
-            $blog ->image = $filename;
-        }
-        else{
-            return $request;
-            $blog ->image ='';
-        }
-
-
         $blog ->save();
 
         return redirect()->route('blog.create')->with('success', 'Data Added');
